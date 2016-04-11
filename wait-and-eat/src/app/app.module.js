@@ -12,6 +12,7 @@
         
             //custom modules
             'app.landing',
+            'app.waitList',
         ]);
     
 })();
