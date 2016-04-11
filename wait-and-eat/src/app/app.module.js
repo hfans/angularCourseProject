@@ -9,6 +9,9 @@
         
             //third party modules
             'firebase',
+        
+            //custom modules
+            'app.landing',
         ]);
     
 })();

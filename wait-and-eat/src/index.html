@@ -10,7 +10,8 @@
 
     </head>
     <body>
-        This is the body
+        <!-- main changing content -->
+        <ng-view></ng-view>
         <!-- Third party JS -->
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" ></script>
@@ -22,5 +23,10 @@
         
         <!-- Main app module -->
         <script src="app/app.module.js"></script>
+    
+        <!-- landing mod -->
+        <script src="app/landing/landing.module.js"></script>
+        <script src="app/landing/config.route.js"></script>
+    
     </body>
 </html>
