@@ -9,12 +9,13 @@
     function WaitListController($firebaseArray) {
         var vm = this;
         
-        vm.parties = [1, 2, 3, 4 ];
+        var fireParties = new Firebase('https://intense-fire-614.firebaseio.com/parties');
+        vm.parties = $firebaseArray(fireParties);
         
         vm.addParty = addParty;
         
         function addParty() {
-            vm.parties.push('another');
+            vm.parties.$add('another');
         }
     }
 })();
