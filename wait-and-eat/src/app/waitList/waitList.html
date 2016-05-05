@@ -10,6 +10,8 @@
     </div>
     <button type="submit" class="btn btn-primary">Add party</button>
 </form>
-{{ vm.newParty }}
-<br />
-{{ vm.parties }}
+<div ng-repeat="party in vm.parties">
+    Name: {{party.name}} <br>
+    phone: {{party.phone}} <br>
+    size: {{party.size}} <br>
+</div>
