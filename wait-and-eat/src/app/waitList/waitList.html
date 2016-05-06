@@ -23,12 +23,14 @@
     <tr ng-repeat="party in vm.parties">
         <td></td>
         <td>
-            <div style="font-weight:bold;">{{party.name}} {{party.size}} people</div>
+            <div style="font-weight:bold;">{{party.name}} ({{party.size}} people)</div>
             <div>{{party.phone}}</div>
         </td>
         <td>
             <div>{{ party.notified ? 'Yes' : 'No'}}</div>
         </td>
-        <td></td>
+        <td>
+            <button ng-click="vm.removeParty(party)" class="btn btn-danger">Remove</button>
+        </td>
     </tr>
 </table>
