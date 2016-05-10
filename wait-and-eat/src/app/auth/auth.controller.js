@@ -5,7 +5,7 @@
         .module('app.auth')
         .controller('AuthController', AuthController);
     
-    AuthController.$inject = ['$firebaseAuth']
+    AuthController.$inject = ['$firebaseAuth'];
     
     function AuthController($firebaseAuth) {
         var vm = this;
@@ -15,12 +15,12 @@
         vm.user = {
             email: '',
             password: ''
-        }
+        };
         
         vm.register = register;
         
-        function register(user){
-            return firebaseAuthObject.$createUser
+        function register(user) {
+            return firebaseAuthObject.$createUser(user);
         }
     }
 })();
