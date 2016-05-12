@@ -5,11 +5,11 @@
         .module('app.auth')
         .controller('AuthController', AuthController);
     
-    AuthController.$inject = ['$location', '$firebaseAuth', 'FIREBASE_URL'];
+    AuthController.$inject = ['$location', '$firebaseAuth'];
     
-    function AuthController($location, $firebaseAuth, FIREBASE_URL) {
+    function AuthController($location, $firebaseAuth) {
         var vm = this;
-        var firebaseReference = new Firebase(FIREBASE_URL);
+        var firebaseReference = new Firebase('https://intense-fire-614.firebaseio.com');
         var firebaseAuthObject = $firebaseAuth(firebaseReference);
         
         vm.user = {
