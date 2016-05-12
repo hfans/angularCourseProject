@@ -3,5 +3,5 @@
     
     angular
         .module('app.core')
-        .constant('FIREBASE_URL', 'https://intense-fire-614.firebaseio.com');
+        .constant('FIREBASE_URL', 'https://intense-fire-614.firebaseio.com/');
 })();
