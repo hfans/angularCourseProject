@@ -5,21 +5,15 @@
         .module('app.waitList')
         .controller('WaitListController', WaitListController);
     
-    WaitListController.$inject = ['$firebaseArray'];
+    WaitListController.$inject = ['$firebaseArray', 'FIREBASE_URL', ];
     
-    function WaitListController($firebaseArray) {
+    function WaitListController($firebaseArray, FIREBASE_URL) {
         var vm = this;
         
-        var fireParties = new Firebase('https://intense-fire-614.firebaseio.com/parties');
-        var fireTextMessages = new Firebase('https://intense-fire-614.firebaseio.com/textMessages');
+        var fireParties = new Firebase(FIREBASE_URL + 'parties');
+        var fireTextMessages = new Firebase(FIREBASE_URL + 'textMessages');
         
-        function Party() {
-            this.name = '';
-            this.phone = '';
-            this.size = '';
-            this.done = false;
-            this.notified = false;
-        }
+        
         
         vm.newParty = new Party();
         vm.parties = $firebaseArray(fireParties);
