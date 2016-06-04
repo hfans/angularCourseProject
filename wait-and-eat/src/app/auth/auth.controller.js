@@ -14,6 +14,7 @@
             email: '',
             password: ''
         };
+        vm.error = null;
         
         vm.register = register;
         vm.login = login;
@@ -23,11 +24,12 @@
                 .then(function () {
                     vm.login(user);
                 })
-                .then(function() {
-                    return authService.sendWelcomeEmail(user.email)
+                .then(function () {
+                    return authService.sendWelcomeEmail(user.email);
                 })
                 .catch(function (error) {
                     console.log(error);
+                    vm.error = error;
                 });
         }
         
@@ -39,6 +41,7 @@
                 })
                 .catch(function (error) {
                     console.log(error);
+                    vm.error = error;
                 });
         }
         
